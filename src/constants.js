@@ -1,0 +1,5 @@
+export const ORDER_STATUSES={
+    LESS_TIMESTAMP: 0,
+    MOST_VOTED: 1,
+    LESS_VOTED: 2
+}

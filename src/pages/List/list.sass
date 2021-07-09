@@ -1,0 +1,33 @@
+@import ../../assets/stylesheet/_colors
+
+.list
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    width: 80%
+    max-width: 400px
+    margin: auto
+    &.paginate
+        width: 100%
+    .post-list
+        display: flex
+        width: 100%
+        margin: auto
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+    p.submit-text
+        text-decoration: none
+        color: $common-black
+        font-weight: bold
+        font-size: 25px
+        letter-spacing: 1px
+        margin: auto
+    select
+        padding: 8px
+        background-color: $post-background
+        border: 1px solid $post-left-section-border
+        border-radius: 5px
+        &:hover
+            box-shadow: 2px 1px 4px$post-left-section-border

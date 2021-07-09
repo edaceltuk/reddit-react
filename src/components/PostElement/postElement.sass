@@ -1,0 +1,74 @@
+@import ../../assets/stylesheet/_colors
+
+.post-element
+    display: flex
+    width: 100%
+    position: relative
+    height: 100px
+    margin: 10px 0
+    padding: 10px
+    border-radius: 4px
+    border:  1px solid transparent
+    text-decoration: none
+    color:  $common-black
+    &:hover
+        background-color: $post-background
+        border:  1px solid $border
+        .delete-button
+            display: flex !important
+            position: absolute
+            right: -7px
+            top: -7px
+            border-radius: 50%
+            width: 20px
+            height: 20px
+            border: none
+            font-weight: bold
+            color: $common-red
+            cursor: pointer
+    .vote
+        display: flex
+        background-color: $post-left-section
+        border: 1px solid $post-left-section-border
+        min-width: 30%
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        border-radius: 4px
+        &-container
+            display: flex
+            justify-content: space-between
+        span
+            font-weight: bold
+            font-size: 20px
+        p
+                margin: 0
+        .nav-image-wrapper
+            img
+                max-width: 40px
+    .post-detail
+        display: flex
+        padding: 0 10px
+        flex-direction: column
+        justify-content: center
+        width: 100%
+        h4, p
+            padding-left: 5px
+        h4
+            color: $button-background
+            font-weight: bold
+            margin: 0
+            margin-bottom: 5px
+            display: flex
+        p
+            color: $button-background
+            display: flex
+            font-size: 14px
+            margin: 0
+            margin-bottom: auto
+        .delete-button
+            display: none
+        
+
+
+            
