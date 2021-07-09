@@ -10,4 +10,4 @@
     yarn start
 
 
-![screen](https://github.com/edaceltuk/reddit-react/blob/master/assets/images/tests.png)
+![screen](https://github.com/edaceltuk/reddit-react/blob/master/src/assets/images/tests.png)
