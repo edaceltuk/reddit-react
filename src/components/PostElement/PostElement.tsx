@@ -1,6 +1,6 @@
 
 
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 
 import { PostContext } from "../../Providers/PostProvider";
 
@@ -9,7 +9,7 @@ import Delete from "../../assets/images/delete.png";
 import './postElement.sass'
 
 type PostElementType = {
-    header: string,
+    name: string,
     url: string,
     setModalData: Function,
     setShowModal: Function,
@@ -18,7 +18,7 @@ type PostElementType = {
 
 const PostElement = (props: PostElementType) => {
     const { upVote, downVote } = useContext(PostContext);
-    const { header, url, setModalData, vote, setShowModal } = props
+    const { name, url, setModalData, vote, setShowModal } = props
 
     return (
         <div className="post-element" data-testid="post-element">
@@ -28,11 +28,11 @@ const PostElement = (props: PostElementType) => {
             </div>
             <div className="post-detail" data-testid="post-detail">
                 <img src={Delete} onClick={() => {
-                    setModalData({ header, url });
+                    setModalData({ name, url });
                     setShowModal(true);
                 }}
                     className="delete-button" alt="delete" data-testid="delete-button" />
-                <h4 data-testid="url-header">{header}</h4>
+                <h4 data-testid="url-header">{name}</h4>
                 <p data-testid="url" >{url}</p>
                 <div className="vote-container" data-testid="vote-container">
                     <button onClick={() => upVote(url)} data-testid="up-vote">Up Vote</button>

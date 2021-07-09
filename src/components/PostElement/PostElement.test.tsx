@@ -15,7 +15,7 @@ const post = {
 
 describe("PostElement", () => {
     const props = {
-        header: post.name,
+        name: post.name,
         url: post.url,
         setModalData: jest.fn(),
         setShowModal: jest.fn(),
@@ -45,10 +45,15 @@ describe("PostElement", () => {
 
         expect(props.setModalData).toHaveBeenCalled()
         expect(props.setShowModal).toHaveBeenCalled()
-        expect(urlHeader.textContent).toBe(props.header)
+        expect(urlHeader.textContent).toBe(props.name)
         expect(url.textContent).toBe(props.url)
     });
 
-
+    it("Should update vote count when clicked upvote button", async () => {
+        const upVote = screen.getByTestId("up-vote")
+        const downVote = screen.getByTestId("down-vote")
+        fireEvent.click(upVote)
+        fireEvent.click(downVote)
+    })
 
 });

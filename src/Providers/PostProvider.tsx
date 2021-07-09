@@ -54,6 +54,7 @@ const PostProvider = ({ children }: any) => {
         if (post.url === url) {
           post.vote--;
           post.updatedAt = Date.now();
+
         }
         return post;
       })

@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 
-import { ORDER_STATUSES } from "../../constants";
 import { PostContext, Post } from "../../Providers/PostProvider";
 import { paginationData } from "../../helper";
 
@@ -19,7 +18,7 @@ const List = () => {
   const [modalData, setModalData] = useState<ModalData>({ name: "", url: "" });
   const [showModal, setShowModal] = useState<Boolean>(false);
   const { paginatedData, totalPageCount } = paginationData(orderedPosts(posts, orderBy), currentPage)
-  
+
   return (
     <div className="list">
       <div className="post-list" data-testid="post-list">
@@ -29,7 +28,7 @@ const List = () => {
           return (
             <PostElement
               key={index}
-              header={post.name}
+              name={post.name}
               url={post.url}
               vote={post.vote}
               setModalData={setModalData}
@@ -37,6 +36,8 @@ const List = () => {
             />
           );
         })}
+        {paginatedData.length < 1 && <p>To see posts please add post from Submit page</p>}
+
         <Pagination
           setCurrentPage={setCurrentPage}
           currentPage={currentPage}
